@@ -9,6 +9,7 @@ struct Menu {
     string nama;
     int harga;
     int stok;
+    int code;
 };
 
 Menu menu[MAX_MENU];
@@ -21,6 +22,8 @@ void tambahMenu() {
     }
 
     Menu newMenu;
+    cout << "Enter menu code: ";
+    cin >> newMenu.code;
     cout << "Masukkan nama menu: ";
     cin >> newMenu.nama;
     cout << "Masukkan harga: ";
@@ -66,7 +69,7 @@ string cariMenuTerlaris() {
     return menuTerlaris;
 }
 
-// Fungsi untuk menampilkan status stok
+
 void tampilkanStatusStok() {
     cout << "Status Stok Menu:" << endl;
     for (int i = 0; i < jumlahMenu; i++) {
@@ -83,7 +86,7 @@ void tampilkanStatusStok() {
 int main() {
  
     int jumlahHari;
-    cout << "Masukkan jumlah hari: ";
+    cout << "Laporan Penjualan hari : ";
     cin >> jumlahHari;
     for (int i = 1; i <= jumlahHari; i++) {
         inputPenjualan(i);
