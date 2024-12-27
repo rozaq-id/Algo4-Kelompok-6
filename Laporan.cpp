@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int MAX_MENU = 100; // Batas maksimal jumlah menu
+const int MAX_MENU = 100;
 
 struct Menu {
     string nama;
@@ -12,9 +12,8 @@ struct Menu {
 };
 
 Menu menu[MAX_MENU];
-int jumlahMenu = 0; // Jumlah menu yang sudah dimasukkan
+int jumlahMenu = 0; 
 
-// Fungsi untuk menambahkan menu
 void tambahMenu() {
     if (jumlahMenu == MAX_MENU) {
         cout << "Menu sudah penuh!" << endl;
@@ -34,7 +33,7 @@ void tambahMenu() {
     cout << "Menu berhasil ditambahkan!" << endl;
 }
 
-// Fungsi untuk input data penjualan
+
 void inputPenjualan(int hari) {
     cout << "Masukkan data penjualan hari ke-" << hari << endl;
     for (int i = 0; i < jumlahMenu; i++) {
@@ -45,16 +44,16 @@ void inputPenjualan(int hari) {
     }
 }
 
-// Fungsi untuk menghitung total penjualan
+
 int hitungTotalPenjualan() {
     int total = 0;
     for (int i = 0; i < jumlahMenu; i++) {
-        total += menu[i].harga * (menu[i].stok * -1); // Asumsi stok negatif adalah jumlah yang terjual
+        total += menu[i].harga * (menu[i].stok * -1); 
     }
     return total;
 }
 
-// Fungsi untuk mencari menu terlaris
+
 string cariMenuTerlaris() {
     int maxTerjual = 0;
     string menuTerlaris;
@@ -80,11 +79,9 @@ void tampilkanStatusStok() {
     }
 }
 
-// Fungsi utama
-int main() {
-    // Tambahkan beberapa menu awal (opsional)
 
-    // Input data penjualan setiap hari
+int main() {
+ 
     int jumlahHari;
     cout << "Masukkan jumlah hari: ";
     cin >> jumlahHari;
@@ -92,7 +89,7 @@ int main() {
         inputPenjualan(i);
     }
 
-    // Tampilkan laporan
+
     cout << "Total penjualan: Rp" << hitungTotalPenjualan() << endl;
     cout << "Menu terlaris: " << cariMenuTerlaris() << endl;
     tampilkanStatusStok();
